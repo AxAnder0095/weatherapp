@@ -1,0 +1,288 @@
+$mobile-screen: 600px
+$tablet: 767px
+$small-screen: 1024px
+$desktop: 1200px
+$large-desktop: 1400px
+
+.background-container
+  height: 100vh
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-image: url("../imgs/mountain.jpg")
+  background-size: 100% 100%
+
+
+.main-container
+  //background-color: #fff
+  width: 55%
+  height: 70%
+  border-radius: 10px
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8)
+  color: white
+  background-color: transparent
+  backdrop-filter: blur(16px)
+
+
+
+.top-row, .bottom-row
+  border: 1px solid black
+  height: 50%
+
+
+.top-row
+  //box-shadow: inset 100px 0 100px violet
+  //background-image: linear-gradient(130deg, black, black,  darkblue)
+  background-color: transparent
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: 10px
+
+.inner-top-left
+  flex: 40%
+  //border: 1px solid white
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+
+.inner-top-middle
+  //border: 1px solid white
+  flex: 20%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+.inner-top-right
+  display: flex
+  justify-content: center
+  align-items: center
+  //border: 1px solid white
+  flex: 40%
+  height: 100%
+
+.inner-top-right .current-data
+  //border: 1px solid white
+  width: 90%
+  //height: 100%
+
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  justify-content: center
+
+
+
+.inner-top-right .current-data .data-container
+  background-color: transparent
+  //border: 1px solid rgba(255, 255, 255, 0.5)
+  border-radius: 5px
+
+  //opacity: 0.2
+  backdrop-filter: blur(16px)
+  color: white
+  width: 50%
+  display: flex
+  flex-direction: column
+  //height: 120px
+
+.inner-top-right .current-data .data-container .side-data
+  white-space: pre
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+  vertical-align: baseline
+
+#city-name, #current-temp, #current-weather
+  margin: 0
+  padding: 0
+
+.inner-top-middle #city-name
+  font-size: 1.5rem
+
+.inner-top-middle #current-temp
+  font-size: 4rem
+
+.inner-top-middle #current-weather
+  font-size: 1.2rem
+
+
+.bottom-row
+  border-bottom-right-radius: 10px
+  border-bottom-left-radius: 10px
+  display: flex
+  color: black
+  background-color: ghostwhite
+
+  //@media (max-width: $large-screen)
+  //  flex-direction: column
+
+.bottom-row .get-city
+  //border: 1px solid black
+  width: 25%
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+
+
+.bottom-row .week-forecast
+  //border: 1px solid black
+  width: 75%
+  display: flex
+  justify-content: center
+  align-items: center
+
+
+.states
+  border: 1px solid black
+  border-radius: 5px
+  //appearance: none
+  width: 40px
+  outline: none
+  margin-left: 10px
+  margin-bottom: 10px
+  padding: 5px 0
+
+
+.days
+  //border: 1px solid black
+  border-radius: 5px
+  display: flex
+  flex-wrap: nowrap
+  align-items: center
+  width: 95%
+  height: 70%
+  overflow-x: auto
+  background-color: #dedede
+
+
+.day
+  flex: 0 0 auto
+  //display: inline-block
+  //border: 1px solid black
+  border-radius: 5px
+  width: 90px
+  height: 90%
+  margin-left: 10px
+  display: flex
+  flex-direction: column
+  //justify-content: center
+  align-items: center
+  background-color: #f2f2f2
+  //box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3)
+
+.weekday
+  background-color: darkblue
+  color: white
+  width: 100%
+  height: 50%
+  border-top-left-radius: 5px
+  border-top-right-radius: 5px
+  font-weight: bold
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 1.3rem
+
+.city-input-container
+  border-radius: 5px
+  padding: 0.5rem
+  margin-top: 10px
+  margin-bottom: 10px
+
+.search-button
+  border: none
+  padding: 10px 20px
+  border-radius: 5px
+  position: relative
+  z-index: 1
+  transition: color 200ms ease-in-out
+  width: 100%
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: black
+    border-radius: 5px
+    z-index: -1
+    transform: scaleX(0)
+    transform-origin: left
+    transition: transform 200ms ease-in-out
+
+  &:hover:before
+    transform: scaleX(1)
+
+  &:hover
+    color: white
+
+
+@media (max-width: $large-desktop) // 1400px
+  .main-container
+    width: 75%
+    height: 70%
+
+@media (max-width: $desktop) // 1200px
+  .main-container
+    width: 85%
+    height: 70%
+
+  .inner-top-middle #city-name
+    font-size: 1.5rem
+
+  .inner-top-middle #current-temp
+    font-size: 4rem
+
+  .inner-top-middle #current-weather
+    font-size: 1.2rem
+
+
+@media (max-width: $small-screen) // 1024px
+  .main-container
+    width: 95%
+    height: 50%
+
+  .inner-top-middle #city-name
+    font-size: 1.3rem
+
+  .inner-top-middle #current-temp
+    font-size: 3.5rem
+
+  .inner-top-middle #current-weather
+    font-size: 1.1rem
+
+  .inner-top-right .current-data .data-container
+    width: 100px
+    height: 100px
+
+  .bottom-row .get-city
+    width: 35%
+
+
+
+  .bottom-row .week-forecast
+    width: 65%
+
+
+
+@media (max-width: $tablet) // 767px
+  .main-container
+    height: 80%
+
+  //.top-row
+
+
+
+@media (max-width: $mobile-screen)
+
+
+
+
+

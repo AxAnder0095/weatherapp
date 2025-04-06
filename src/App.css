@@ -1,0 +1,12 @@
+#root {
+  font-size: 14px;
+  font-family: Quicksand, Helvetica, sans-serif;
+}
+
+body{
+  margin:0;
+  padding:0;
+  /*background-image: url("../src/imgs/mountain.jpg");*/
+  /*background-size: 100% 100%;*/
+}
+
